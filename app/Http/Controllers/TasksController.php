@@ -10,6 +10,9 @@ use App\Http\Controllers\Controller;
 /* Link to model (app/Task.php) */
 use App\Task;
 
+/* use Session class */
+use Session;
+
 class TasksController extends Controller
 {
     /**
@@ -47,6 +50,9 @@ class TasksController extends Controller
 
         $input = $request->all();
         Task::create($input);
+
+        Session::flash('flash_message', 'Task successfully added!');
+
         return redirect()->back();
     }
 
