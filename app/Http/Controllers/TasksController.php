@@ -77,7 +77,7 @@ class TasksController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('tasks.edit');
     }
 
     /**
