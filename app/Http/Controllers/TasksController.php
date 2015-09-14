@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+/* Link to model (app/Task.php) */
+use App\Task;
+
 class TasksController extends Controller
 {
     /**
@@ -37,7 +40,9 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Task::create($input);
+        return redirect()->back();
     }
 
     /**
