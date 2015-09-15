@@ -2,8 +2,8 @@
 
 @section('content')
 
-<h1>Add a New Task</h1>
-<p class="lead">Add to your task list below.</p>
+<h1>Добавление новой задачи</h1>
+<p class="lead">Заполните поля, чтобы создать новую задачу.</p>
 <hr>
 
 @include('partials.alerts.errors')
@@ -13,16 +13,16 @@
 ]) !!}
 
 <div class="form-group">
-    {!! Form::label('title', 'Title:', ['class' => 'control-label']) !!}
+    {!! Form::label('title', 'Заголовок:', ['class' => 'control-label']) !!}
     {!! Form::text('title', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('description', 'Description:', ['class' => 'control-label']) !!}
+    {!! Form::label('description', 'Описание:', ['class' => 'control-label']) !!}
     {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 </div>
 
-{!! Form::submit('Create New Task', ['class' => 'btn btn-primary']) !!}
+{!! Form::submit('Создать новую задачу', ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}
 
