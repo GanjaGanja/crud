@@ -88,9 +88,21 @@ class TasksController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update($id, Request $request)
     {
-        //
+        $task = Task::findOrFail($id);
+
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        $input = $request->all();
+        $task->fill($input)->save();
+
+        Session::flash('flash_message', 'Task successfully added!');
+
+        return redirect()->back();
     }
 
     /**
