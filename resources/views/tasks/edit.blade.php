@@ -2,8 +2,8 @@
 
 @section('content')
 
-<h1>Edit Task - Task Name </h1>
-<p class="lead">Edit this task below. <a href="{{ route('tasks.index') }}">Go back to all tasks.</a></p>
+<h1>Editing "{{ $task->title }}"</h1>
+<p class="lead">Edit and save this task below, or <a href="{{ route('tasks.index') }}">go back to all tasks.</a></p>
 <hr>
 
 @include('partials.alerts.errors')
