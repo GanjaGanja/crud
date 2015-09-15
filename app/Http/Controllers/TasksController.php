@@ -52,7 +52,7 @@ class TasksController extends Controller
         $input = $request->all();
         Task::create($input);
 
-        Session::flash('flash_message', 'Task successfully added!');
+        Session::flash('flash_message', 'Задача успешно добавлена!');
 
         return redirect()->back();
     }
@@ -100,7 +100,7 @@ class TasksController extends Controller
         $input = $request->all();
         $task->fill($input)->save();
 
-        Session::flash('flash_message', 'Task successfully added!');
+        Session::flash('flash_message', 'Задача успешно обновлена!');
 
         return redirect()->back();
     }
@@ -116,7 +116,7 @@ class TasksController extends Controller
         $task = Task::findOrFail($id);
         $task->delete();
 
-        Session::flash('flash_message', 'Task successfully deleted!');
+        Session::flash('flash_message', 'Задача успешно удалена!');
 
         return redirect()->route('tasks.index');
     }
